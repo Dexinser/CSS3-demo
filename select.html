@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>CSS3-select</title>
+	<style>
+		.wrapper {
+			position: relative;
+			width: 400px;
+			height: 450px;
+			margin: 100px auto;
+			border: 1px solid #ccc;
+			display: flex;
+		}
+		.wrapper input {
+			flex: 1;
+			width: 40px;
+			height: 40px;
+			margin: 5px 0px;
+		}
+		.wrapper div {
+			position: absolute;
+			top: 50px;
+			width: 400px;
+			height: 400px;
+			font-size: 50px;
+			color: rgba(0,111,222,.6);
+			display: none;
+		}
+		.wrapper input:checked + div{
+			display: block;
+		}
+		.wrapper div:nth-of-type(1) {
+			background-color: rgba(12,12,12,.6);
+		}
+		.wrapper div:nth-of-type(2) {
+			background-color: rgba(122,122,122,.6);
+		}
+		.wrapper div:nth-of-type(3) {
+			background-color: rgba(212,212,0,.6);
+		}
+	</style>
+</head>
+<body>
+	<div class="wrapper">
+		<input type="radio" name="group" checked>
+		<div>做喜欢的事儿，不要管别人的眼光，自己的路还是要自己走的~</div>
+		<input type="radio" name="group">
+		<div>你会成长为你最想成为的人！</div>
+		<input type="radio" name="group">
+		<div>生活这么美好，世界这么大，现在不好好学习，那你要到什么时候才能有能力去看世界呢？</div>
+	</div>
+</body>
+</html>

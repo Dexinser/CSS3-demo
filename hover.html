@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>hover-CSS3</title>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+			list-style: none;
+		}
+		.wrapper {
+			margin: 10px;
+			width: 150px;
+			height: 700px;
+			color: rgba(122,122,122,.6);
+			font-size: 20px;
+			font-weight: bolder;
+			position: relative;
+			text-align: center;
+		}
+		.wrapper .li {
+			background-color: rgba(12,12,12,.2);
+			float: left;
+			height: 150px;
+			width: 150px;
+			line-height: 150px;
+			margin: 10px 0;
+		}
+		.wrapper div {
+			position: absolute;
+			top: 300px;
+			left: 400px;
+			height: 0;
+			width: 0;
+			opacity: 0;
+			background-repeat: no-repeat;
+			background-size: 500px 500px;
+		}
+		.wrapper .li:nth-of-type(1):hover + div {
+			top: 5px;
+			left: 160px;
+			height: 500px;
+			width: 500px;
+			opacity: 1;
+			display: block;
+			background-image: url(1.jpeg);
+			transition: all 1s ease-out;
+		}
+		.wrapper .li:nth-of-type(2):hover + div {
+			top: 5px;
+			left: 160px;
+			height: 500px;
+			width: 500px;
+			opacity: 1;
+			display: block;
+			background-image: url(2.jpeg);
+			transition: all 1s ease;
+		}
+		.wrapper .li:nth-of-type(3):hover + div {
+			top: 5px;
+			left: 160px;
+			height: 500px;
+			width: 500px;
+			opacity: 1;
+			display: block;
+			background-image: url(3.jpeg);
+			transition: all 1s ease-out;
+		}
+	</style>
+</head>
+<body>
+	<ul class="wrapper">
+		<li class="li">猫儿--奶暹罗</li>
+		<div></div>
+		<li class="li">狗儿--小萨摩</li>
+		<div></div>
+		<li class="li">鱼儿--花斑鱼</li>
+		<div></div>
+	</ul>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Animation</title>
+	<style>
+		* {
+			padding: 0;
+			margin: 0;
+			list-style: none;
+		}
+		div {
+			width: 100px;
+			height: 100px;
+			background-color: rgba(122,122,122,.8);
+			border-radius: 50%;
+			position: absolute;
+			left: 152.5px;
+			top: 50px;
+			animation: downup 2s ease-in alternate infinite;
+		}
+		span {
+			position: absolute;
+			left: 200px;
+			top: 50px;
+			display: inline-block;
+			width: 5px;
+			height: 500px;
+			background-color: rgba(12,12,122,.8);
+		}
+		div:hover {
+			background-color: red;
+			animation-play-state: paused;
+		}
+		@keyframes downup {
+			0%{
+				top: 50px;
+				background-color: rgba(122,122,122,.9);
+			}
+			30%{
+				background-color: rgba(122,122,122,.5);
+			}
+			50%{
+				background-color: rgba(222,1,122,.1);
+			}
+			70%{
+				background-color: rgba(222,222,12,.5);
+			}
+			100%{
+				background-color: rgba(122,122,12,.9);
+				top: 450px;
+			}
+		}
+	</style>
+</head>
+<body>
+	<div></div>
+	<span></span>
+</body>
+</html>

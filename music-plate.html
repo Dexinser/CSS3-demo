@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>music-plate</title>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+			list-style: none;
+		}
+		.wrapper {
+			margin: 200px 200px;
+			position: relative;
+			height: 200px;
+			width: 200px;
+			background-color: rgba(122,122,122,.8);
+			border-radius: 50%;
+			background: linear-gradient(to bottom, rgb(200,30,30) 0%, rgb(200,30,30) 40%, green 33%, green 66%, #fd0 66%, #fd0 100%);
+			animation-name: turn;
+			animation-duration: 10s;
+			animation-timing-function: linear;
+			animation-iteration-count: infinite;
+			animation-play-state: paused;
+		}
+		div .center {
+			display: block;
+			position: absolute;
+			left: 60px;
+			top: 60px;
+			height: 80px;
+			width: 80px;
+			border-radius: 50%;
+			background-image: url(1.jpeg);
+			background-size: 100% 100%;
+			background-repeat: no-repeat;
+		}
+		.wrapper div {
+			position: absolute;
+			left: 54px;
+			top: 54px;
+			height: 92px;
+			width: 92px;
+			border-radius: 50%;
+			background-color: white;
+		}
+		.tree {
+			display: block;
+			position: absolute;
+			top: 150px;
+			left: 300px;
+			width: 15px;
+			height: 150px;
+			background-color: rgba(122,122,122,.8);
+			transform-origin: top;
+			transform: rotateZ(-60deg);
+			transition: all 1s linear;
+		}
+		audio {
+			height: 50px;
+			width: 500px;
+			position: absolute;
+			bottom: 100px;
+			left: 50px;
+		}
+		@keyframes turn {
+			0%{
+				transform: rotateZ(0deg);
+			}
+			100%{
+				transform: rotateZ(360deg);
+			}
+		}
+		.animation {
+			transform: rotateZ(-20deg);
+		}
+	</style>
+</head>
+<body>	
+	<audio src="adele-Someone Like You.mp3" controls loop class="audio"></audio>
+
+	<div class='wrapper'>
+		<div></div>
+		<span class="center"></span>
+	</div>
+	<span class="tree"></span>
+	<script>
+		var oDiv = document.getElementsByClassName('wrapper')[0],
+			btn = document.getElementsByClassName('audio')[0],
+			oTree = document.getElementsByClassName('tree')[0],
+			timer = null;
+		btn.addEventListener('play', function(){
+				oTree.className = 'tree animation';
+			timer = window.setTimeout(function(){
+				oDiv.style.animationPlayState = "running";
+			},1000);
+		})
+		btn.addEventListener('pause', function(){
+				oTree.className = 'tree';
+				oDiv.style.animationPlayState = 'paused';
+		})
+	</script>
+</body>
+</html>
